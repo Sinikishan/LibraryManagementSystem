@@ -24,7 +24,7 @@ A library management system website has been created using the Django framework.
 2. Launch the anaconda prompt
 3. Change the directory to the project's directory
 4. Perform the following commands:
-  - conda create --name LMS django 		///// Creates a new virtual environment called LMS /////
+  - conda create --name LMS django ///// Creates a new virtual environment called LMS /////
   - conda activate LMS ///// Activates the newly created virtual environment /////
   - pip install -r requirements.txt ///// Installs additional files to help run this project universally with different versions of django /////
   - python manage.py makemigrations ///// Makes migrations in case of any changes in models /////
