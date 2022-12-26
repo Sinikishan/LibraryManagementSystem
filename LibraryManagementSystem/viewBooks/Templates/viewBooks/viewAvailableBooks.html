@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1 class="mb-5">Books Available to Borrow</h1>
+    <center>
+      <div class="row">
+        {% for item in books %}
+          <div class="col-lg-6 mb-4">
+            <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg">
+              <div class="card-body pb-0">
+                <h4 class="card-title mb-0">{{ item.title }}</h4>
+              </div>
+              <div class="card-body">
+                <p class="card-text">Author: {{ item.author }}<br>ISBN: {{ item.isbn }}<br>Year of Publication: {{ item.publishYear }}<br>Number of Pages: {{ item.pages }}<br>Availability Status: {{ item.status }}</p>
+                {% if user.is_authenticated %}
+                  <a href="{% url 'borrowBook:borrowPage' passedISBN=item.isbn %}" class="btn btn-primary">Borrow</a>
+                {% else %}
+                  <a href="{% url 'login' %}" class="btn btn-primary">Borrow</a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </center>
+  {% endblock %}

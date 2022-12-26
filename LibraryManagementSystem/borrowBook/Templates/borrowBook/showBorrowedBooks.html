@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1 class="mb-5">Books Currently Borrowed</h1>
+    <center>
+      <div class="row">
+        {% for borrower in borrowList %}
+          <div class="col-lg-6 mb-4">
+            <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg">
+              <div class="card-body pb-0">
+                <h4 class="card-title mb-0">{{ borrower.title }}</h4>
+              </div>
+              <div class="card-body">
+                <p class="card-text">Borrowed by {{ borrower.name }} with the ID: {{ borrower.student_id }}</p>
+                <p class="card-text">Borrow Date: {{ borrower.borrow_date }}<br>Return Date: {{ borrower.return_date }}</p>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </center>
+  {% endblock %}

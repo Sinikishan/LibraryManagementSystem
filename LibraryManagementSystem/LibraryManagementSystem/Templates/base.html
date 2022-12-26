@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" crossorigin="anonymous">
+    <style>
+      .whiteText{
+        color:white;
+      }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body style="background-color:#D3D3D3;">
+
+    {% include 'navBar.html' %}
+
+    <div class="container-xxl mx-5 px-5 py-5">
+
+      {% block content %}
+
+      {% endblock %}
+
+    </div>
+  </body>
+</html>

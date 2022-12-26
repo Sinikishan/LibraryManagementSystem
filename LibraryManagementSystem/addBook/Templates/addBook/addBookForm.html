@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+  <div class="row">
+    <div class="col">
+      <h1 class="mb-5">Add a new Book to the System</h1>
+
+      <form method="POST">
+        {% csrf_token %}
+        {{addForm|crispy}}
+        <br>
+        <input type="submit" name="btn btn-primary" value="Submit">
+      </form>
+    </div>
+  <div class="col">
+    <img class="card-img-top p-3 ps-5" src="{% static 'addBook/books.png' %}">
+  </div>
+  </div>
+{% endblock %}
